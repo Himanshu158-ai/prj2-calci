@@ -27,12 +27,32 @@ for (let i = 0; i < dgt.length; i++) {
 
 eql.addEventListener('click', function () {
     inp.value = "";
-    let ans = ""
-    val1 = parseInt(val1);
-    val2 = parseInt(val2);
-    // console.log(val1);
-    // console.log(val2);
-    // console.log(oprt);
+    let f1 = false;
+    for(let i = 0; i<val1.length; i++){
+        if(val1[i]=='.'){
+            val1 = parseFloat(val1);
+            f1 = true;
+            break;
+        }
+    }
+    if(f1!=true){
+        val1 = parseInt(val1);
+    }
+
+    let f2 = false;
+    for(let i = 0; i<val2.length; i++){
+        if(val2[i]=='.'){
+            val2 = parseFloat(val2);
+            f2 = true;
+            break;
+        }
+    }
+    if(f2!=true){
+        val2 = parseInt(val2);
+    }
+    
+    console.log(val1);
+    console.log(val2);
     switch (oprt) {
         case '+':
             inp.value = val1 + val2;
